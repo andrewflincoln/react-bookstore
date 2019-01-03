@@ -2,19 +2,12 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -29,4 +22,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.book-info {
+  display: inline-block;
+ 
+}
+.book-info span {
+
+  margin: 20px;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+}
+td {
+  padding: 20px;
+  text-align: left;
+}
+.table-header {
+  font-weight: bold;
+}
+button {
+  margin-left: 15px;
+}
+.cart {
+  margin-top: 15px;
+  font-size: 15px;
+}
+input {
+  margin-right: 15px;
 }
