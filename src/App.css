@@ -44,6 +44,12 @@ td {
   padding: 20px;
   text-align: left;
 }
+.detail-row {
+  outline: thin solid;
+}
+.desc-row {
+  width: 20%;
+}
 .table-header {
   font-weight: bold;
 }
@@ -54,6 +60,29 @@ button {
   margin-top: 15px;
   font-size: 15px;
 }
-input {
+/* input {
   margin-right: 15px;
+} */
+.hidden {
+  display: none;
+}
+.go-button {
+  margin-left: 0;
+  margin-right: 20px;
+}
+.addForm {
+
+  text-align: left;
+  line-height: 2;
+  width: 100%;
+  
+}
+input {
+  width: 60%;
+}
+textarea {
+  width: 70%;
+}
+.search-bar {
+  width: 20%;
 }

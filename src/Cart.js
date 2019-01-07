@@ -9,6 +9,10 @@ function Cart (props) {
     return (
         <div className='cart'>
         Search: <input type='text'/> 
+            <button class ='go-button' type='submit' onClick={props.handleSubmit}>Go!</button>
+       
+
+
         Cart total: ${sumTotal}
         <button>Checkout</button>
         </div>
