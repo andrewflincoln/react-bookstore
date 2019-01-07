@@ -29,7 +29,7 @@ class BooksList extends React.Component {
     }
     
     getBooks = async () => {
-        axios.get(`http://localhost:8082/api/books`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/books`)
             .then(response => {
                 this.setState({ books: response.data, seeHidden: true, 
                 addTitle: '',
@@ -47,12 +47,12 @@ class BooksList extends React.Component {
     }
 
     addBook = async (id) => {
-        axios.patch(`http://localhost:8082/api/books/cart/add/${id}`)
+        axios.patch(`${process.env.REACT_APP_API_URL}/api/books/cart/add/${id}`)
             .then( () =>  this.getBooks() )
             .catch(() => console.log(`couldn't add the book`))
     }
     removeBook = async (id) => {
-        axios.patch(`http://localhost:8082/api/books/cart/remove/${id}`)
+        axios.patch(`${process.env.REACT_APP_API_URL}/api/books/cart/remove/${id}`)
         .then( () => this.getBooks() )
         .catch(() => console.log('could not remove book'))
     }
@@ -85,7 +85,7 @@ class BooksList extends React.Component {
     createNewBook = (e) => {
         e.preventDefault()
         this.setState({addFormHidden: true})
-        axios.post(`http://localhost:8082/api/books`, 
+        axios.post(`${process.env.REACT_APP_API_URL}/api/books`, 
         {title: this.state.addTitle,
         subtitle: this.state.addSubtitle,
         author: this.state.addAuthor,
@@ -117,7 +117,7 @@ class BooksList extends React.Component {
     completeEdit = (e) => {
         e.preventDefault()
         this.setState({addFormHidden: true})
-        axios.put(`http://localhost:8082/api/books/${this.state.addId}`, 
+        axios.put(`${process.env.REACT_APP_API_URL}/api/books/${this.state.addId}`, 
         {title: this.state.addTitle,
         subtitle: this.state.addSubtitle,
         author: this.state.addAuthor,
@@ -132,7 +132,7 @@ class BooksList extends React.Component {
         .catch(() => console.log(`edit didn't work`))
     }
     destroyBook = (id) => {
-        axios.delete(`http://localhost:8082/api/books/${id}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}/api/books/${id}`)
         .then(() => this.getBooks())
         .catch(() => console.log('could not delete'))
 
